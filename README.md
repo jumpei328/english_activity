@@ -4,9 +4,9 @@ s1260028 Jumpei Kanno
 s1260012 Kaito Suzuki
 
 ## How to use
-'''
+```
 python3 prototype.py
-'''
+```
 
 
 ## Idea Memo
