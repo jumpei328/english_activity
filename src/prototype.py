@@ -3,12 +3,15 @@ import nltk
 list_irregular = []#irregular past tense
 list_regular = []#regular past tense
 
+#planning to make a while loop in completed program
 print("please input sentence:")
+#print("finish : ctl + c")
 s = input()
 #"Two frogs, a father and his son, accidentally fell into a bucket of milk. They started swimming for their lives. They swam for a long time, but there seemed no hope of their getting out. The father soon gave up and drowned. The son carried on swimming. During this time, the milk had begun to form a ball of butter. Using this island of butter as a platform, he managed to hop out of the bucket"
 morph = nltk.word_tokenize(s)#separate all words
 pos = nltk.pos_tag(morph)#set tags
 
+#Put together in one loop in completed program
 for i in range(len(pos)): #loop all
     #find irregular past tense
     if 'VBD' in pos[i][1] and (False == pos[i][0].endswith('ed')): 
