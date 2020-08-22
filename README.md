@@ -1,9 +1,9 @@
-# english_activity
+# English_activity
 Team.SI
 s1260028 Jumpei Kanno
 s1260012 Kaito Suzuki
 
-## How to use
+## Code
 ```
 python3 prototype.py
 ```
