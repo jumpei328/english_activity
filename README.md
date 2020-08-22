@@ -4,7 +4,7 @@ s1260028 Jumpei Kanno
 s1260012 Kaito Suzuki
 
 ## Idea Memo
-# Thema 8.Past tense colorizer: Detect and colour past tense verbs according to type, e.g. regular, irregular.
+## Thema 8.Past tense colorizer: Detect and color past tense verbs according to type, e.g. regular, irregular.
 
 ### 1.What will your tool detect?
 
@@ -20,7 +20,7 @@ Add color
 
 ### 4.How will it work?
 
-Detect and colour past tense verbs according to type
+Detect and color past tense verbs according to type
 
 ### 5.What software will you use (if any?)
 
@@ -28,7 +28,7 @@ Nothing
 
 ### 6.Which progamming language will you use (if any?)
 
-Pyhon 3
+Python 3
 
 ### 7.Which libraries will you use (if any?)
 
