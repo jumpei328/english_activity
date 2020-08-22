@@ -3,6 +3,12 @@ Team.SI
 s1260028 Jumpei Kanno
 s1260012 Kaito Suzuki
 
+## How to use
+'''
+python3 prototype.py
+'''
+
+
 ## Idea Memo
 ## Thema 8.Past tense colorizer: Detect and color past tense verbs according to type, e.g. regular, irregular.
 
