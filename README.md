@@ -3,6 +3,17 @@ Team.SI
 Jumpei Kanno
 Kaito Suzuki
 
+
+##Preparation
+download NLTK and module
+
+```
+pip install nltk
+python3
+>>>import nltk
+>>>nltk.download('all')
+```
+
 ## Code
 ```
 python3 prototype.py
