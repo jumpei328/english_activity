@@ -3,8 +3,7 @@ Team.SI
 Jumpei Kanno
 Kaito Suzuki
 
-
-##Preparation
+## Preparation
 download NLTK and module
 
 ```
