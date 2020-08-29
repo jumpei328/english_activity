@@ -4,10 +4,10 @@ Team.SI
 - Kaito Suzuki
 <br>
 Jumpei - analysis,programming in py;<br>
-Kaito - GUI;
+Kaito - GUI,presentation;
 
 ## Online_version
-
+https://floating-waters-05876.herokuapp.com/input
 
 ## Preparation
 download NLTK and module
