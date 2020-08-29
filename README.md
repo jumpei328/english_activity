@@ -3,6 +3,9 @@ Team.SI
 Jumpei Kanno
 Kaito Suzuki
 
+## Online_version
+
+
 ## Preparation
 download NLTK and module
 
@@ -13,9 +16,9 @@ python3
 >>>nltk.download('all')
 ```
 
-## Code
+## Prototype Code
 ```
-python3 prototype.py
+$python3 prototype.py
 ```
 
 
