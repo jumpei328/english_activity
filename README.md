@@ -1,7 +1,10 @@
 # English_activity
 Team.SI
-Jumpei Kanno
-Kaito Suzuki
+- Jumpei Kanno
+- Kaito Suzuki
+<br>
+Jumpei - analysis,programming in py;<br>
+Kaito - GUI;
 
 ## Online_version
 
