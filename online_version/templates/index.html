@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest') }}">
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+    <!--  -->
+    <title>TENSE ANALYZER</title>
+</head>
+
+
+<body>
+    <div id="container">
+        <div id="title">
+            <h1>TENSE ANALYZER</h1>
+            <p>入力された英文の時制を解析して表示します。</p>
+        </div>
+
+        <div id="analyze">
+            <h2>英文を入力してEnterキーを押してください</h2>
+            <form id="form" action="/input" method="post" name="formStr">
+                <input id="textField" class="input" type="text" name="str" value="{{value_str}}">
+                <input class="submit" type="submit" name="" value="送信">
+            </form>
+        </div>
+
+        <div class="result">
+            <h2>結果</h2>
+            <h3><font color="red">past simple:単純過去</font>　<font color="blue">past continiue:過去進行</font></h3>
+            <h3><font color="green">past perfect simple:過去完了</font>　<font color="aqua">past perfect continue:過去完了進行形</font></h3>
+            <!-- result配列の長さが0より大きい場合表示 -->
+            {% if result|length > 0 %}
+            <div class="result-content">
+                <form id="reset" action="/reset" method="post">
+                    <button name="reset_result">結果をリセットする</button>
+                </form>
+                <div class="items">
+                    <!-- resultの中身ををループで表示（ここではreverseで逆順にしています） -->
+
+                    {% for r in result%}
+
+                    <!-- r[0](文章)が存在するなら表示する|reverse -->
+                    {% if r[0] %}
+
+                    <span class="item">
+                        <p class="value_str">{% for k in r[0]%}
+                            {%- if k[1] == 1 and k[2] == 1 %} 
+                            <font color="red">{{k[0]}}(regular)</font>　
+                            {%- elif k[1] == 1 and k[2] == 2 %}
+                            <font color="blue">{{k[0]}}(regular)</font>
+                            {%- elif k[1] == 1 and k[2] == 3 %}
+                            <font color="green">{{k[0]}}(regular)</font>
+                            {%- elif k[1] == 1 and k[2] == 4 %}
+                            <font color="aqua">{{k[0]}}(regular)</font>
+                            {%- elif k[1] == 2 and k[2] == 1 %} 
+                            <font color="red">{{k[0]}}(irregular)</font>　
+                            {%- elif k[1] == 2 and k[2] == 2 %}
+                            <font color="blue">{{k[0]}}(irregular)</font>
+                            {%- elif k[1] == 2 and k[2] == 3 %}
+                            <font color="green">{{k[0]}}(irregular)</font>
+                            {%- elif k[1] == 2 and k[2] == 4 %}
+                            <font color="aqua">{{k[0]}}(irregular)</font>
+                            {%- elif k[2] == 1 %} 
+                            <font color="red">{{k[0]}}</font>
+                            {%- elif k[2] == 2 %}
+                            <font color="blue">{{k[0]}}</font>
+                            {%- elif k[2] == 3 %}
+                            <font color="green">{{k[0]}}</font>
+                            {%- elif k[2] == 4 %}
+                            <font color="aqua">{{k[0]}}</font>
+                            {%- else %}
+                            {{k[0]}}
+                            {%- endif %}
+
+                            {% endfor %}</p>
+                    </span>
+                    
+                    {% endif %}
+                    <!--  -->
+
+                    {% endfor %}
+                    <!--  -->
+                </div>
+            </div>
+            {% endif %}
+            <!--  -->
+        </div>
+    </div>
+</body>
+
+</html>
