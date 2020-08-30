@@ -9,16 +9,6 @@ Kaito - GUI,presentation;
 ## Online_version
 https://floating-waters-05876.herokuapp.com/input
 
-## Preparation
-download NLTK and module
-
-```
-pip install nltk
-python3
->>>import nltk
->>>nltk.download('all')
-```
-
 ## Prototype Code
 ```
 $python3 prototype.py
