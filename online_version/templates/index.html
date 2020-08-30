@@ -21,19 +21,18 @@
     <!-- font -->
     <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
     <!--  -->
-    <title>TENSE ANALYZER</title>
+    <title>Past Tense Analyzer</title>
 </head>
-
 
 <body>
     <div id="container">
         <div id="title">
-            <h1>TENSE ANALYZER</h1>
-            <p>入力された英文の時制を解析して表示します。</p>
+            <h1>Past Tense Analyzer</h1>
+            <h3>Predict classification of past tense verbs</h3>
         </div>
 
         <div id="analyze">
-            <h2>英文を入力してEnterキーを押してください</h2>
+            <h2>Please input english sentence and press the enter key</h2>
             <form id="form" action="/input" method="post" name="formStr">
                 <input id="textField" class="input" type="text" name="str" value="{{value_str}}">
                 <input class="submit" type="submit" name="" value="送信">
@@ -41,21 +40,18 @@
         </div>
 
         <div class="result">
-            <h2>結果</h2>
-            <h3><font color="red">past simple:単純過去</font>　<font color="blue">past continiue:過去進行</font></h3>
-            <h3><font color="green">past perfect simple:過去完了</font>　<font color="aqua">past perfect continue:過去完了進行形</font></h3>
+            <h2>Result</h2>
+            <h3><font color="red">red:past simple</font>　<font color="blue">blue:past continue</font></h3>
+            <h3><font color="green">green:past perfect simple</font>　<font color="aqua">light blue:past perfect continue</font></h3>
             <!-- result配列の長さが0より大きい場合表示 -->
             {% if result|length > 0 %}
             <div class="result-content">
-                <form id="reset" action="/reset" method="post">
-                    <button name="reset_result">結果をリセットする</button>
-                </form>
                 <div class="items">
-                    <!-- resultの中身ををループで表示（ここではreverseで逆順にしています） -->
+                    <!-- resultの中身ををループで表示-->
 
-                    {% for r in result%}
+                    {% for r in result|reverse%}
 
-                    <!-- r[0](文章)が存在するなら表示する|reverse -->
+                    <!-- r[0](文章)が存在するなら表示する-->
                     {% if r[0] %}
 
                     <span class="item">
