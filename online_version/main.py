@@ -7,25 +7,17 @@ socketio = SocketIO(app, async_mode=None)
 
 result = []
 
-
 @app.route("/")
 def init():
     # value_strをhtml側で使えるようにする
     return render_template('index.html', result=result)
 
-
-#  action="/reset"
-@app.route("/reset", methods=["GET", "POST"])
-def reset_result():
-    global result
-    result = []
-    return render_template('index.html', result=result)
-
-
 #  action="/input"
 @app.route("/input", methods=["GET", "POST"])
 def get_form():
     global value_str
+    global result
+    result = []
     # フォームの値を受け取る
     try:
         value_str = request.form['str']  # name="str"のinputタグの値を取得
